@@ -10,5 +10,6 @@
 
 class Section < ActiveRecord::Base
   has_many :classroom_sections
-  has_many :classrooms, through: :classroom_section
+  has_many :classrooms, through: :classroom_sections
+  has_many :students
 end
