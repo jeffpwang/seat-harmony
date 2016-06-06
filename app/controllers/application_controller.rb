@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def set_user
     if user_signed_in? 
       @user = current_user
+      @sections = @user.classrooms.map {|classroom| classroom.sections}.flatten
     end 
   end 
 
